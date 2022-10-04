@@ -319,7 +319,7 @@ void adminPanel()
                     deleteIllegalVote(inputID);
                     break;
                 case '4':
-                    printf("Do you want to ban particular ID's?\nPress 1 if yes or any other key to continue...");
+                    printf("Press 1 to ban a particular ID from voting...Otherwise press anyohter key...");
                     scanf(" %c",&banInp);
                     if(banInp=='1'){
                         banID();
