@@ -168,7 +168,7 @@ void deleteIllegalVote(char userID[15])     //
     fclose(fp);
     fclose(fcp);
     remove("tmp.txt");
-    printf("\nVote deleted successfully\nPress any key to continue...");
+    printf("\nVote is successfully deleted\nPress any key to continue...");
     getch();
 }
 
@@ -208,7 +208,7 @@ void initiateNewElection()
     for (int i = 0;i < numberOfCandidates; i++)
     {
         candidateArray[i].cid=i+1;
-        printf("Enter name of candidate %d: ",i+1);
+        printf("Enter the name of candidate %d: ",i+1);
         scanf(" %s",candidateArray[i].cname);
         candidateArray[i].votes=0;
     }
@@ -220,7 +220,7 @@ void saveElectionInfoInFile(){
     FILE *fp = fopen("ElectionInfo.txt", "w");
     if(fp==NULL)
     {
-        printf("\nError in file creation\n");
+        printf("\nError in file creation :\n");
         fclose(fp);
         return;
     }
@@ -232,7 +232,7 @@ void saveElectionInfoInFile(){
         numberOfCandidates
     );
     fclose(fp);
-    printf("Saved Successfully : )");
+    printf("Saved Successfully : ");
 }
 
 void loadElectionInfoFromFile()
@@ -292,7 +292,7 @@ void adminPanel()
             break;
         }
 
-        printf("\n\nLOGGED IN SUCCESSFULLY (Press Enter)");
+        printf("\n\nLOGGED IN SUCCESSFULLY !!(Press Enter)");
 		getch();
 
         while(1)
@@ -319,7 +319,7 @@ void adminPanel()
                     deleteIllegalVote(inputID);
                     break;
                 case '4':
-                    printf("Press 1 to ban a particular ID from voting...Otherwise press anyohter key...");
+                    printf("Press 1 to ban a particular ID from voting...Otherwise press another key...");
                     scanf(" %c",&banInp);
                     if(banInp=='1'){
                         banID();
@@ -434,7 +434,7 @@ void studentPanel()  // function for main student panel
         {
             printf("\n  %d. %s",i+1,candidateArray[i].cname);
         }
-        printf("\n\n  Your Vote(Enter Number):"); //Inputing user's vote
+        printf("\n\n Enter Your Vote(Enter Number):"); //Inputing user's vote
         voteInput=getch();
         printf("*");
         if(voteInput-48 < 1 || voteInput-48 > numberOfCandidates)
@@ -444,7 +444,7 @@ void studentPanel()  // function for main student panel
             continue;
         }
         saveVote(userID,voteInput); //calling function saveVote to save vote of the user.
-        printf("\n\nThanks for your precious vote(Press Enter)");
+        printf("\n\nThanks for your precious vote!!(Press Enter to exit screen)");
         getch();
     }
 };
