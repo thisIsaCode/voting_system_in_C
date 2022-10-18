@@ -26,6 +26,7 @@ int extractYear(char userID[15])
 {
     int year=0;
     char tmp;
+	int local;
     for(int i=0;i<4;i++){
         tmp=userID[i];
 		year=(year*10)+(tmp-48);
